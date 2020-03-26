@@ -52,11 +52,11 @@
 ```
 Тесты:
 ```
-(print (separate-after-n '(b b 2 f  2 3 f 3 4 d f c 2) 4))
+>(print (separate-after-n '(b b 2 f  2 3 f 3 4 d f c 2) 4))
 ((B B 2 F) (2 3 F 3 4 D F C 2)) 
-(print (separate-after-n '(a 4 e 3 s 5 3 2) 0))
+>(print (separate-after-n '(a 4 e 3 s 5 3 2) 0))
 (NIL (A 4 E 3 S 5 3 2)) 
-(print (separate-after-n '(a 4 e 3 s 5 3 2) 6))
+>(print (separate-after-n '(a 4 e 3 s 5 3 2) 6))
 ((A 4 E 3 S 5) (3 2)) 
 ```
 
@@ -73,11 +73,11 @@ defun drop-duplicates (w)
 ```
 Тесты:
 ```
-(print (drop-duplicates '(a b 2 3 3 b 4 d c 2)))
+>(print (drop-duplicates '(a b 2 3 3 b 4 d c 2)))
 (A 3 B 4 D C 2) 
-(print (drop-duplicates '(2 3 3 4 2 1 5 6 )))
+>(print (drop-duplicates '(2 3 3 4 2 1 5 6 )))
 (3 4 2 1 5 6) 
-(print (drop-duplicates '(b b 2 f  2 3 f 3 4 d f c 2)))
+>(print (drop-duplicates '(b b 2 f  2 3 f 3 4 d f c 2)))
 (B 3 4 D F C 2) 
 ```
 
@@ -88,7 +88,7 @@ defun drop-duplicates (w)
 Запрограммируйте интерпретатор ВЫЧИСЛИ, который преобразует инфиксную
 запись операций в префиксную и возвращает значение выражения. Пример:
 ```
-(ВЫЧИСЛИ ’((-2 + 4) * 3))
+>(ВЫЧИСЛИ ’((-2 + 4) * 3))
 6
 ```
 
