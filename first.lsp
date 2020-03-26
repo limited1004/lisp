@@ -2,25 +2,14 @@
 ;Определите функцию, которая разделит исходный список из целых 
 ;чисел на два списка: список положительных чисел и список отрицательных чисел.
 
-(defun task (lst)
-    (if (null lst) nil
-           ((lambda (first tasklast)
-                         ((lambda (poslst neglst)
-                                        (cond
-                                            ((< first 0) (list poslst (cons first neglst)))
-                                            ((> first 0) (list (cons first poslst) neglst))
-                                            ((= first 0) tasklast)       
-                                        )
-                           )
-                           (car tasklast)
-                           (cadr tasklast)
-                          )
-             )
-            (car lst)
-            (task (cdr lst))
-            )
-     )
-)
+(defun task (lst &optional (p nil) (n nil))
+  ((lambda (x) (and(setq first (car x))(setq last (cdr x)))) lst)
+      (cond ((null first) (list p n))
+            ((> first 0) (task last (cons first p) n))
+            ((< first 0) (task last p (cons first n)))
+            ((= first 0) (task last p n))
+      )
+) 
 
 
 ;(task '(2 3 4 -1 4 -2))
