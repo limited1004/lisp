@@ -48,7 +48,7 @@
       (if (zerop n)
           (cons nil (cons input-list nil))
           ((lambda (elem result) (cons (cons elem (car result)) (cdr result)))
-           (car input-list) (separate-after-n (cdr input-list) (1- n))))))
+           (car input-list) (separate-after-n (cdr input-list) (- n 1))))))
 ```
 Тесты:
 ```
