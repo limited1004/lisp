@@ -50,7 +50,16 @@
           ((lambda (elem result) (cons (cons elem (car result)) (cdr result)))
            (car input-list) (separate-after-n (cdr input-list) (1- n))))))
 ```
-    
+Тесты:
+```
+(print (separate-after-n '(b b 2 f  2 3 f 3 4 d f c 2) 4))
+((B B 2 F) (2 3 F 3 4 D F C 2)) 
+(print (separate-after-n '(a 4 e 3 s 5 3 2) 0))
+(NIL (A 4 E 3 S 5 3 2)) 
+(print (separate-after-n '(a 4 e 3 s 5 3 2) 6))
+((A 4 E 3 S 5) (3 2)) 
+```
+
 # Задача 13
 
 Определите функцию, удаляющие в исходном списке все повторные вхождения элементов.
@@ -64,53 +73,36 @@ defun drop-duplicates (w)
 ```
 Тесты:
 ```
-(drop-duplicates '(a b 2 3 3 b 4 d c 2))
-(drop-duplicates '(2 3 3 4 2 1 5 6 ))
-(drop-duplicates '(b b 2 f  2 3 f 3 4 d f c 2))
+(print (drop-duplicates '(a b 2 3 3 b 4 d c 2)))
+(A 3 B 4 D C 2) 
+(print (drop-duplicates '(2 3 3 4 2 1 5 6 )))
+(3 4 2 1 5 6) 
+(print (drop-duplicates '(b b 2 f  2 3 f 3 4 d f c 2)))
+(B 3 4 D F C 2) 
 ```
 
 
     
 # Задача 30
 
-Определите функцию, вычисляющую скалярное произведение векторов, заданных списками целых чисел.
+Запрограммируйте интерпретатор ВЫЧИСЛИ, который преобразует инфиксную
+запись операций в префиксную и возвращает значение выражения. Пример:
+> (ВЫЧИСЛИ ’((-2 + 4) * 3))
+6
 
-``` LISP
-(defun scpr (x y)
-  (if (or (null x)(null y)) 0 (+ (* (car x) (car y)) (scpr (cdr x) (cdr y))))
-)
-```
+
 
     
 # Задача 33
 
-Определите функцию, удаляющую из списка первое вхождение данного элемента на верхнем уровне.
+Определите функцию МНОЖЕСТВО, преобразующую список в множество.
 
-``` LISP
-(defun udal (lst a)
-    ((lambda (x) (and(setq first (car x))(setq last (cdr x)))) lst)
-        (cond ((null first) lst)
-              ((= first a) last)
-              (t (cons first (udal (cdr lst) a))))
-        )
-
-(print(udal '(2 1 3 2 3 4) 2))
-```
 
 
 # Задача 34
 
-Определите функцию, удаляющую из списка каждый четный элемент.
-
-``` LISP
-(defun chet (lst &optional (n nil))
-    ((lambda (x) (and(setq first (car x))(setq last (cdr x)))) lst)
-        (cond ((null first) (list n))
-              ((/= (rem first 2) 0) (chet last (cons first n)))
-              (t (chet last n))
-        )
- )
-```
+Определите предикат РАВЕНСТВО-МНОЖЕСТВ, проверяющий совпадение двух множеств (независимо от порядка следования элементов). Подсказка: напишите
+функцию УДАЛИТЬ, удаляющую данный элемент из множества
 
 
 
