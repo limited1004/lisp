@@ -95,3 +95,20 @@ defun drop-duplicates (w)
 (print (drop-duplicates '(2 3 3 4 2 1 5 6 )))
 (print (drop-duplicates '(b b 2 f  2 3 f 3 4 d f c 2)))
 
+;Задача 30
+;Определите функцию, удаляющие в исходном списке все повторные вхождения элементов.
+
+
+(defun prefix (lst)
+   (cond ((null lst) nil)
+         ((atom lst) lst)
+         (t (list (prefix (cadr lst)) (prefix (car lst) ) (prefix (caddr lst)))
+          )
+    )
+ )
+
+
+(print  (calculate '((-4 + 7 ) *  3 )))
+(print  (prefix '((-4 + 7 ) *  3 )))
+(print  (calculate '((2 + -6 ) *  4 )))
+(print  (prefix '((2 + -6 ) *  4 )))
