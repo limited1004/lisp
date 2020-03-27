@@ -16,6 +16,7 @@
 Определите функцию, осуществляющую перестановку двух элементов списка
 с заданными номерами.
 
+Код:
 ``` LISP
 (defun get-elem-by-index(lst index)
     (cond
@@ -141,8 +142,23 @@ defun drop-duplicates (w)
 >(ВЫЧИСЛИ ’((-2 + 4) * 3))
 6
 ```
-
-
+Код:
+``` LISP
+(defun prefix (lst)
+   (cond ((null lst) nil)
+         ((atom lst) lst)
+         (t (list (prefix (cadr lst)) (prefix (car lst) ) (prefix (caddr lst)))
+          )
+    )
+ )
+```
+Тесты:
+```
+(print  (calculate '((-4 + 7 ) *  3 )))
+(print  (prefix '((-4 + 7 ) *  3 )))
+(print  (calculate '((2 + -6 ) *  4 )))
+(print  (prefix '((2 + -6 ) *  4 )))
+```
     
 # Задача 33
 
