@@ -16,8 +16,49 @@
 Определите функцию, осуществляющую перестановку двух элементов списка
 с заданными номерами.
 
+``` LISP
+(defun get-elem-by-index(lst index)
+    (cond
+        ((null lst)     nil)
+        ((< index 1)    nil)
+        ((= index 1)    (car lst))
+        (t              ( get-elem-by-index (cdr lst) (1- index) ))
+    )
+)
 
+(defun set-elem-by-index(lst index value)
+    (cond
+        ((null lst)     nil)
+        ((< index 1)    lst)
+        ((= index 1)    (cons 
+                            value 
+                            (cdr lst)
+                        ))
+        (t              (cons 
+                            (car lst) 
+                            ( set-elem-by-index (cdr lst) (1- index) value)
+                        ))
+    )
+)
 
+(defun swap-elements-x-y(lst x y)
+    (set-elem-by-index 
+        (set-elem-by-index 
+            lst 
+            x 
+            (get-elem-by-index lst y)
+        )
+        y
+        (get-elem-by-index lst x)
+    )
+)
+```
+Тесты:
+```
+(print (swap-elements-x-y '( 1 2 3 4 2 3 5 ) 1 3 ))
+(print (swap-elements-x-y '( 2 4 3 6 4 7 ) 5 1 ))
+(print (swap-elements-x-y '(  93 23 4 56 7 18 ) 7 2 )
+```
 
 
 
