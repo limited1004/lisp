@@ -171,8 +171,29 @@ defun drop-duplicates (w)
 Определите предикат РАВЕНСТВО-МНОЖЕСТВ, проверяющий совпадение двух множеств (независимо от порядка следования элементов). Подсказка: напишите
 функцию УДАЛИТЬ, удаляющую данный элемент из множества
 
+Код:
+``` LISP
+(defun is-contain (list1 list2)
+	(if (eq nil list1)
+		T
+		(and (member (car list1) list2)
+			 (is-contain (cdr list1) list2)
+		)
+	)
+)
 
-
-
+(defun is-equal (A B)
+	(and (is-contain A B) (is-contain B A))
+)
+```
+Тесты:
+```
+>(print (is-equal '(2 3 1) '(3 1 2 4)))
+NIL
+>(print (is-equal '(2 3 1) '(3 1 2 )))
+T
+>(print (is-equal '(2 3 1 4) '(3 1 2)))
+Nil
+```
 
     
