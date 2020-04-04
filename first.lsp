@@ -112,3 +112,25 @@ defun drop-duplicates (w)
 (print  (prefix '((-4 + 7 ) *  3 )))
 (print  (calculate '((2 + -6 ) *  4 )))
 (print  (prefix '((2 + -6 ) *  4 )))
+
+
+;Задача 34
+;Определите предикат РАВЕНСТВО-МНОЖЕСТВ, проверяющий совпадение двух множеств (независимо от порядка следования элементов). Подсказка: напишите
+;функцию УДАЛИТЬ, удаляющую данный элемент из множества
+
+(defun is-contain (list1 list2)
+	(if (eq nil list1)
+		T
+		(and (member (car list1) list2)
+			 (is-contain (cdr list1) list2)
+		)
+	)
+)
+
+(defun is-equal (A B)
+	(and (is-contain A B) (is-contain B A))
+)
+
+(print (is-equal '(2 3 1) '(3 1 2 4)))
+(print (is-equal '(2 3 1) '(3 1 2 )))
+(print (is-equal '(2 3 1 4) '(3 1 2)))
