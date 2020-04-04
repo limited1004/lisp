@@ -134,3 +134,27 @@ defun drop-duplicates (w)
 (print (is-equal '(2 3 1) '(3 1 2 4)))
 (print (is-equal '(2 3 1) '(3 1 2 )))
 (print (is-equal '(2 3 1 4) '(3 1 2)))
+
+
+
+;Задача 42
+;Определите функцию, находящую максимальное из значений, находящихся в
+;вершинах дерева
+
+(defun get-max-in-tree (tree)
+	(if (atom tree)
+		tree
+		(if (null (cdr tree))
+			(get-max-in-tree (car tree))
+			(max
+				(get-max-in-tree (car tree))
+				(get-max-in-tree (cdr tree))
+			)
+		)
+	)
+)
+
+(print(get-max-in-tree '(23 (12 ) (28 ) )))
+(print(get-max-in-tree '(23 (12 (1 )) (28 (89))) ))
+(print(get-max-in-tree '(23 (12 (1 (4 (5 (9 (10)))))) (28 (8))) ))
+
