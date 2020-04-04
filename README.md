@@ -196,4 +196,32 @@ T
 Nil
 ```
 
-    
+# Задача 42
+
+Определите функцию, находящую максимальное из значений, находящихся в
+вершинах дерева
+
+Код:
+``` LISP
+(defun get-max-in-tree (tree)
+	(if (atom tree)
+		tree
+		(if (null (cdr tree))
+			(get-max-in-tree (car tree))
+			(max
+				(get-max-in-tree (car tree))
+				(get-max-in-tree (cdr tree))
+			)
+		)
+	)
+)
+```
+Тесты:
+```
+>(print(get-max-in-tree '(23 (12 ) (28 ) )))
+28
+>(print(get-max-in-tree '(23 (12 (1 )) (28 (89))) ))
+89
+>(print(get-max-in-tree '(23 (12 (1 (4 (5 (9 (10)))))) (28 (8))) ))
+28
+```    
