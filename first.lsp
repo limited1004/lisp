@@ -38,7 +38,9 @@
     )
 )
 
-
+;
+;------------------------------------------------------------------------------
+;
 (print (swap-elements-x-y '( 1 2 3 4 2 3 5 ) 1 3 ))
 (print (swap-elements-x-y '( 2 4 3 6 4 7 ) 5 1 ))
 (print (swap-elements-x-y '(  93 23 4 56 7 18 ) 7 2 )
@@ -59,7 +61,9 @@
       )
 ) 
 
-
+;
+;------------------------------------------------------------------------------
+;
 (print (task '(2 3 4 -1 4 -2)))
 (print (task '(-2 0 2 22 -3 0 -5)))
 (print (task '(-4 4 -6 -3 -2)))
@@ -75,7 +79,9 @@
           ((lambda (elem result) (cons (cons elem (car result)) (cdr result)))
            (car input-list) (separate-after-n (cdr input-list) (- n 1))))))
 
-
+;
+;------------------------------------------------------------------------------
+;
 
 (print (separate-after-n '(b b 2 f  2 3 f 3 4 d f c 2) 4))
 (print (separate-after-n '(a 4 e 3 s 5 3 2) 0))
@@ -89,7 +95,9 @@ defun drop-duplicates (w)
   (cond ((null w) nil)
         ((member (car w) (cdr w)) (drop-duplicates (cdr w)))
         ((cons (car w) (drop-duplicates (cdr w))))))
-
+;
+;------------------------------------------------------------------------------
+;
 
 (print (drop-duplicates '(a b 2 3 3 b 4 d c 2)))
 (print (drop-duplicates '(2 3 3 4 2 1 5 6 )))
@@ -107,7 +115,9 @@ defun drop-duplicates (w)
     )
  )
 
-
+;
+;------------------------------------------------------------------------------
+;
 (print  (calculate '((-4 + 7 ) *  3 )))
 (print  (prefix '((-4 + 7 ) *  3 )))
 (print  (calculate '((2 + -6 ) *  4 )))
@@ -130,7 +140,9 @@ defun drop-duplicates (w)
 (defun is-equal (A B)
 	(and (is-contain A B) (is-contain B A))
 )
-
+;
+;------------------------------------------------------------------------------
+;
 (print (is-equal '(2 3 1) '(3 1 2 4)))
 (print (is-equal '(2 3 1) '(3 1 2 )))
 (print (is-equal '(2 3 1 4) '(3 1 2)))
@@ -153,7 +165,9 @@ defun drop-duplicates (w)
 		)
 	)
 )
-
+;
+;------------------------------------------------------------------------------
+;
 (print(get-max-in-tree '(23 (12 ) (28 ) )))
 (print(get-max-in-tree '(23 (12 (1 )) (28 (89))) ))
 (print(get-max-in-tree '(23 (12 (1 (4 (5 (9 (10)))))) (28 (8))) ))
