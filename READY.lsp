@@ -46,7 +46,7 @@
 ;
 (print (swap-elements-x-y '( 1 2 3 4 2 3 5 ) 1 3 ))
 (print (swap-elements-x-y '( 2 4 3 6 4 7 ) 5 1 ))
-(print (swap-elements-x-y '(  93 23 4 56 7 18 ) 7 2 )
+(print (swap-elements-x-y '(  93 23 4 56 7 18 ) 7 2 ))
 
 
 ;
@@ -100,7 +100,7 @@
 ;Определите функцию, удаляющие в исходном списке все повторные вхождения элементов.
 
 
-defun drop-duplicates (w)
+(defun drop-duplicates (w)
   (cond ((null w) nil)
         ((member (car w) (cdr w)) (drop-duplicates (cdr w)))
         ((cons (car w) (drop-duplicates (cdr w))))))
@@ -129,9 +129,7 @@ defun drop-duplicates (w)
 ;
 ;------------------------------------------------------------------------------
 ;
-(print  (calculate '((-4 + 7 ) *  3 )))
 (print  (prefix '((-4 + 7 ) *  3 )))
-(print  (calculate '((2 + -6 ) *  4 )))
 (print  (prefix '((2 + -6 ) *  4 )))
 
 ;
