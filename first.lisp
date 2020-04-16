@@ -46,7 +46,7 @@
 ;
 (print (swap-elements-x-y '( 1 2 3 4 2 3 5 ) 1 3 ))
 (print (swap-elements-x-y '( 2 4 3 6 4 7 ) 5 1 ))
-(print (swap-elements-x-y '(  93 23 4 56 7 18 ) 7 2 )
+(print (swap-elements-x-y '(  93 23 4 56 7 18 ) 7 2 ))
 
 
 ;
