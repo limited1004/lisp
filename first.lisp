@@ -100,7 +100,7 @@
 ;Определите функцию, удаляющие в исходном списке все повторные вхождения элементов.
 
 
-defun drop-duplicates (w)
+(defun drop-duplicates (w)
   (cond ((null w) nil)
         ((member (car w) (cdr w)) (drop-duplicates (cdr w)))
         ((cons (car w) (drop-duplicates (cdr w))))))
