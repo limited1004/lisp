@@ -131,6 +131,38 @@
 ;
 (print  (prefix '((-4 + 7 ) *  3 )))
 (print  (prefix '((2 + -6 ) *  4 )))
+;
+;------------------------------------------------------------------------------
+;
+;Задача 33
+;Определите функцию МНОЖЕСТВО, преобразующую список в множество
+
+(defun create-set(lst)
+	((lambda(list1 list2)
+		(
+            cond((NULL lst) NIL)
+                ((check list1 list2) (create-set list2))
+                (T (cons list1 (create-set list2)))
+		)
+	)(car lst) (cdr lst))
+)
+
+(defun check(element lst)
+	((lambda(list1 list2)
+        (
+            cond((NULL lst) NIL)
+                ((eq element list1) T)
+                (T (check element list2))
+        )
+    )(car lst)(cdr lst))
+)
+;
+;------------------------------------------------------------------------------
+;
+(print (create-set '(1 1 2 3 4 4 4 5 4 6 4 7)))
+(print (create-set '(1 2 3 4 5 6 6 6 6)))
+(print (create-set '(1 2 3 4 5 3 6)))
+
 
 ;
 ;------------------------------------------------------------------------------
