@@ -23,7 +23,7 @@
 ;определения (DEFUN).
 
 (defun сама (lst1 lst2)
-          `(defun  return-form   (lst1 lst2))
+          `(defun сама (lst1 lst2))
 )
 
 
