@@ -85,11 +85,26 @@
 ;
 ;Задача 8
 ;Напишите генератор натуральных чисел: 0, 1, 2, 3, 4, 5, ...
+(defun natgen (n)
+    (function
+     (lambda ()
+             (setq n (+ n 1))
+             n)))
 
 ;
 ;------------------------------------------------------------------------------
 ;
-
+(write-line "")
+(write-line "Задача 8 Test 1")
+(setq nat (natgen 0))
+(print (funcall nat))
+(print (funcall nat))
+(print (funcall nat))
+(print (funcall nat))
+(print (funcall nat))
+(print (funcall nat))
+(print (funcall nat))
+(print (funcall nat))
 
 ;
 ;------------------------------------------------------------------------------
