@@ -17,6 +17,7 @@
 ;
 ;------------------------------------------------------------------------------
 ;
+(write-line "")
 (write-line "Задача 2 Test 1")
 (print (maplist1 'REVERSE '(1 2 3)))
 (write-line "")
@@ -38,19 +39,20 @@
 ;
 ;------------------------------------------------------------------------------
 ;
-(write-line "Задача 2 Test 1")
+(write-line "")
+(write-line "Задача 4 Test 1")
 (print (каждый 'evenp '(8 10  12)))
 (write-line "")
-(write-line "Задача 2 Test 2")
+(write-line "Задача 4 Test 2")
 (print (каждый 'evenp '(8 10 11 12)))
 (write-line "")
-(write-line "Задача 2 Test 3")
+(write-line "Задача 4 Test 3")
 (print (каждый 'numberp '(8 10 11  12)))
 (write-line "")
-(write-line "Задача 2 Test 4")
+(write-line "Задача 4 Test 4")
 (print (каждый 'numberp '(8 10 a  12)))
 (write-line "")
-(write-line "Задача 2 Test 4")
+(write-line "Задача 4 Test 5")
 (print (каждый 'atom '(8 10 a  12)))
 
   
@@ -69,13 +71,13 @@
 ;------------------------------------------------------------------------------
 ;
 (write-line "")
-(write-line "Задача 4 Test 1")
+(write-line "Задача 6 Test 1")
 (print(удалить-если 'evenp '( 1 2 3 4 5 )))
 (write-line "")
-(write-line "Задача 4 Test 2")
+(write-line "Задача 6 Test 2")
 (print(удалить-если 'numberp '( a 1 b 2 c 3)))
 (write-line "")
-(write-line "Задача 4 Test 3")
+(write-line "Задача 6 Test 3")
 (print (удалить-если (lambda (x) (> x 2)) '(3 1 2)))
 
 ;
@@ -84,22 +86,10 @@
 ;Задача 8
 ;Напишите генератор натуральных чисел: 0, 1, 2, 3, 4, 5, ...
 
-(defun удалить-если (pred l)
-    (mapcan (function (lambda (x)
-                              (if (funcall pred x) (list x) nil)))
-            l))
 ;
 ;------------------------------------------------------------------------------
 ;
-(write-line "")
-(write-line "Задача 8 Test 1")
-(print(удалить-если 'evenp '( 1 2 3 4 5 )))
-(write-line "")
-(write-line "Задача 8 Test 2")
-(print(удалить-если 'numberp '( a 1 b 2 c 3)))
-(write-line "")
-(write-line "Задача 8 Test 3")
-(print (удалить-если (lambda (x) (> x 2)) '(3 1 2)))
+
 
 ;
 ;------------------------------------------------------------------------------
