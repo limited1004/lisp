@@ -4,13 +4,11 @@
 ;Задача 2
 ;Определите функицонал (MAPLIST fn список) для одного списочного аргумента
 
-(defun maplist1 (fn lst)
+(defun maplist1 (fn l)
 
-          (cond 
-             ((null fn) nil)
-             ((null lst) nil)
-            
-             (t(cons (funcall fn lst)   (maplist1 fn (cdr lst))))
+          (cond ((null l) nil)
+            (t(cons (funcall fn l)   
+                    (maplist1 fn (cdr l))))
           )
 )
 
