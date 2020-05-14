@@ -63,7 +63,7 @@
 
 (defun удалить-если (pred l)
     (mapcan (function (lambda (x)
-                              (if (funcall pred x) (list x) nil)))
+                              (if (funcall pred x) nil (list x) )))
             l))
 ;
 ;------------------------------------------------------------------------------
