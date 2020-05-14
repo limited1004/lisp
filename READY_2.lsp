@@ -19,6 +19,7 @@
 ;
 (write-line "Задача 2 Test 1")
 (print (maplist1 'REVERSE '(1 2 3)))
+(write-line "")
 (write-line "Задача 2 Test 2")
 (print (maplist1 'list '(1 2 3)))
 
@@ -37,10 +38,13 @@
 ;
 ;------------------------------------------------------------------------------
 ;
+(write-line "")
 (write-line "Задача 4 Test 1")
 (print(удалить-если 'evenp '( 1 2 3 4 5 )))
+(write-line "")
 (write-line "Задача 4 Test 2")
 (print(удалить-если 'numberp '( a 1 b 2 c 3)))
+(write-line "")
 (write-line "Задача 4 Test 3")
 (print (удалить-если (lambda (x) (> x 2)) '(3 1 2)))
 
@@ -57,10 +61,13 @@
 ;
 ;------------------------------------------------------------------------------
 ;
+(write-line "")
 (write-line "Задача 8 Test 1")
 (print(удалить-если 'evenp '( 1 2 3 4 5 )))
+(write-line "")
 (write-line "Задача 8 Test 2")
 (print(удалить-если 'numberp '( a 1 b 2 c 3)))
+(write-line "")
 (write-line "Задача 8 Test 3")
 (print (удалить-если (lambda (x) (> x 2)) '(3 1 2)))
 
@@ -80,6 +87,7 @@
 
 ;------------------------------------------------------------------------------
 ;
+(write-line "")
 (write-line "Задача 10 Test 1")
 (setq ab (order-gen nil))
 (print (funcall ab))
@@ -88,6 +96,7 @@
 ;
 ;------------------------------------------------------------------------------
 ;
+(write-line "")
 (write-line "Задача 10 Test 2")
 (setq ab (order-gen '(a b)))
 (print (funcall ab))
@@ -102,9 +111,12 @@
 
 ;------------------------------------------------------------------------------
 ;
+(write-line "")
 (write-line "Задача 12 Test 1")
 (print (свой-вызов 1 2)) 
+(write-line "")
 (write-line "Задача 12 Test 2")
-(print (свой-вызов 'l 1 2)) 
+(print (свой-вызов 'l 1 2))
+(write-line "")
 (write-line "Задача 12 Test 3")
 (print (свой-вызов '(l r t)))
