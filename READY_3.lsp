@@ -23,6 +23,38 @@
 ;
 ;------------------------------------------------------------------------------
 ;
+
+;
+;------------------------------------------------------------------------------
+;
+;Задача 2
+ ; Определите макрос (POP стек), который читает из стека верхний элемент и меняет значение переменной стека. 
+ (defmacro somepop (stack)
+  `(let ((first (car ,stack)))(setq ,stack (cdr ,stack))first))
+
+(setq stack1 (list 1 2 3 4))
+;(print (macroexpand '(popp stack1)))
+(print stack1)
+
+(write-line "")
+(write-line "Задача 2 Test 1")
+(print (somepop stack1))
+(write-line "")
+(write-line "")
+(write-line "Задача 2 Test 2")
+(print (somepop stack1))
+(write-line "")
+(write-line "")
+(write-line "Задача 2 Test 3")
+(print (somepop stack1))
+(write-line "")
+
+;
+;------------------------------------------------------------------------------
+;
+
+
+
 ;Задача 3
 ;;; Определите лисповскую форму (IF условие p q) в виде макроса.
 (defmacro if-cond (условие p q)
@@ -46,5 +78,32 @@
 ;
 ;------------------------------------------------------------------------------
 ;
+
+; 4. Определите ввиде макроса форму (FIF тест отр нуль полож).
+
+(defmacro FIF (тест отр нуль полож)
+  `(cond
+     ((> ,тест 0) ,полож)
+     ((< ,тест 0) ,отр)
+     (T ,нуль)))
+
+
+
+
+(write-line "")
+(write-line "Задача 4 Test 1")
+(print (FIF 0 'отр 0 'полож))
+(write-line "")
+(write-line "")
+(write-line "Задача 4 Test 2")
+
+
+(print (FIF (- 0 10) 'отр 0 'полож))
+(write-line "")
+(write-line "")
+(write-line "Задача 4 Test 3")
+(print (FIF (+ 0 10) 'отр 0 'полож))
+(write-line "")
+
 
 
