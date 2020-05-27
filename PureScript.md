@@ -1,4 +1,6 @@
 [Книга по PureScript](https://leanpub.com/purescript/read)
+[Быстрый tutorial](https://learnxinyminutes.com/docs/purescript/)
+
 ### История
 PureScript был первоначально разработан Филом Фриманом в 2013 году. Он начал работать над PureScript, поскольку различные попытки скомпилировать Haskell в JavaScript при сохранении его семантики (например, с использованием Fay, Haste или GHCJS) не сработали к его удовлетворению. 
 
