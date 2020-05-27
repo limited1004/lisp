@@ -215,10 +215,13 @@ cons Прикрепляет элемент к началу массива, со�
 Eg.
 
 `cons 1 [2, 3, 4] = [1, 2, 3, 4]`
-[Онлайн ide](https://try.purescript.org/?session=e13ffae6-9577-8ac0-aef8-e5252001b80c)
 
 [Официальная документация](https://github.com/purescript/documentation/blob/master/guides/Getting-Started.md)
-[Книга по PureScript](https://leanpub.com/purescript/read)
 
 [Быстрый tutorial](https://learnxinyminutes.com/docs/purescript/)
+
+[Книга по PureScript](https://leanpub.com/purescript/read)
+
+[Онлайн ide](https://try.purescript.org/?session=e13ffae6-9577-8ac0-aef8-e5252001b80c)
+
 ### Конец
