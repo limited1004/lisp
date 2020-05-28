@@ -46,18 +46,21 @@ main = do
        print (allDifferent [1,2]) 
        print (allDifferent [1,2,3,4,5,1,4])
 
+       putStrLn " "
        putStrLn "Task 18"
        print (check_lists [5,4,3,2,1,2] [1,2,3,4,2,5]) 
        print (check_lists [1,2] [2,2,1]) 
        print (check_lists [1,2,3,4,5,1,4] [1,2,3,4,4,1])
 
+       putStrLn " "
        putStrLn "Task 19"
        print (subSet [3] [1,2,3])
        print (subSet [1] [4,2,3])
        print (subSet [1] [])
        print (subSet [1,2] [1,2])
        print (subSet [1,2] [2,1])
-       
+
+       putStrLn " "
        putStrLn "Task 25"
        print (qsort [1,2,3,2,4,1,4])
        print (qsort [1,2,3,5,6,1,4])
